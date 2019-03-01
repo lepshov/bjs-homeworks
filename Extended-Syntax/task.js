@@ -11,9 +11,23 @@ function calculateQuadraticEquation(){
 }
 
 function getResult(a,b,c){
-    // код для задачи №1 писать здесь
-    //return x;
+    "use strict";
+    a = 2;
+    b = 4;
+    c = -3;
+    let x = b**2 - (4*a*c);
+    console.log(x);
+
+    let formula1 = (-b + Math.sqrt(40)) / (2 * 2)
+    console.log(formula1);
+
+    let formula2 = (-b - Math.sqrt(40)) / (2 * 2)
+    console.log(formula2);
+
+    let arr = [formula1, formula2]
+    return arr;
 }
+getResult();
 
 function calculateDrinkTask(){
     let name = window.personName.value;
