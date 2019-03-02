@@ -1,5 +1,5 @@
 
-
+"use strict"
 function calculateQuadraticEquation(){
     let a = +window.a.value;
     let b = +window.b.value;
@@ -11,21 +11,30 @@ function calculateQuadraticEquation(){
 }
 
 function getResult(a,b,c){
-    "use strict";
     a = 2;
     b = 4;
     c = -3;
-    let x = b**2 - (4*a*c);
-    console.log(x);
+    let diskriminant = b**2 - (4*a*c);
+    console.log(diskriminant);
 
-    let formula1 = (-b + Math.sqrt(40)) / (2 * 2)
+    if (diskriminant < 0) {
+        console.log ("Дискриминант меньше нуля, корней нет!");
+    }
+
+    if  (diskriminant = 0) {
+        console.log ("Дискриминант равен нулю, один корень!");
+    }
+
+    else (diskriminant > 0) 
+        console.log ("Дискриминант больше нуля, два корня!");
+    
+    let formula1 = (-b + Math.sqrt(diskriminant)) / (2 * a)
     console.log(formula1);
 
-    let formula2 = (-b - Math.sqrt(40)) / (2 * 2)
+    let formula2 = (-b - Math.sqrt(diskriminant)) / (2 * a)
     console.log(formula2);
 
-    let arr = [formula1, formula2]
-    return arr;
+    return [formula1, formula2];
 }
 getResult();
 
