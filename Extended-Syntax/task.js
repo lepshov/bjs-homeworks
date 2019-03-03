@@ -11,30 +11,30 @@ function calculateQuadraticEquation(){
 }
 
 function getResult(a,b,c){
-    a = 2;
-    b = 4;
-    c = -3;
     let diskriminant = b**2 - (4*a*c);
     console.log(diskriminant);
 
     if (diskriminant < 0) {
         console.log ("Дискриминант меньше нуля, корней нет!");
+        return null;
     }
 
-    if  (diskriminant = 0) {
+    if  (diskriminant === 0) {
         console.log ("Дискриминант равен нулю, один корень!");
+
+        let formulaDiskr0 = -b / (2 * a);
+        return [formulaDiskr0];
     }
 
-    else (diskriminant > 0) 
+    else if (diskriminant > 0) {
         console.log ("Дискриминант больше нуля, два корня!");
     
-    let formula1 = (-b + Math.sqrt(diskriminant)) / (2 * a)
-    console.log(formula1);
+        let formula1 = (-b + Math.sqrt(diskriminant)) / (2 * a);
 
-    let formula2 = (-b - Math.sqrt(diskriminant)) / (2 * a)
-    console.log(formula2);
+        let formula2 = (-b - Math.sqrt(diskriminant)) / (2 * a);
 
-    return [formula1, formula2];
+        return [formula1, formula2];
+    }
 }
 getResult();
 
