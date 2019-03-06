@@ -45,8 +45,27 @@ function calculateDrinkTask(){
     window.drink.textContent = drink;
 }
 
+function calculateDrinkTask(){
+    let name = window.personName.value;
+    let dateOfBirthday = new Date(window.dateOfBirthday.value);
+    let drink = askDrink(name, dateOfBirthday);
+    window.drink.textContent = drink;
+}
+
 function askDrink(name,dateOfBirthday){
-    // код для задачи №2 писать здесь
+    let year =(new Date).getFullYear();
+    let now = new Date();
+
+    if (dateOfBirthday > 18){
+        console.log("Не желаете ли олд-фэшн, " + name "?");
+    }
+    else if (dateOfBirthday < 18) {
+      console.log("Сожалею," + name ", но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!”);
+    }
+}
+askDrink();
+
+    
     //console.log(result)
     //return result;
 }
