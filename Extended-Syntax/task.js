@@ -45,22 +45,18 @@ function calculateDrinkTask(){
     window.drink.textContent = drink;
 }
 
-function calculateDrinkTask(){
-    let name = window.personName.value;
-    let dateOfBirthday = new Date(window.dateOfBirthday.value);
-    let drink = askDrink(name, dateOfBirthday);
-    window.drink.textContent = drink;
-}
-
 function askDrink(name,dateOfBirthday){
     let year =(new Date).getFullYear();
+    let ageOfPerson = year - dateOfBirthday;
     let now = new Date();
 
-    if (dateOfBirthday > 18){
-        console.log("Не желаете ли олд-фэшн, " + name "?");
+    if (ageOfPerson > 18) {
+        console.log("Не желаете ли олд-фэшн, " + name + "?");
+        return ageOfPerson;
     }
-    else if (dateOfBirthday < 18) {
-      console.log("Сожалею," + name ", но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!”);
+    else if (ageOfPerson < 18) {
+      console.log("Сожалею," + name ", но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!");
+      return ageOfPerson;
     }
 }
 askDrink();
